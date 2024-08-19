@@ -1,11 +1,21 @@
 import express from 'express'
 
+// graphql
+import { createHandler } from 'graphql-http'
+import { root, schema } from './gql/index.js'
+
 const app = express()
 
 // middleware
 app.use(express.json())
 
-app.use('/graphql', (req, res, next) => {})
+app.all(
+  '/graphql',
+  createHandler({
+    schema,
+    rootValue: root,
+  })
+)
 
 const port = 5400
 
