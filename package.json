@@ -1,6 +1,7 @@
 {
   "name": "todo-gql",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -8,5 +9,9 @@
   },
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   }
 }
